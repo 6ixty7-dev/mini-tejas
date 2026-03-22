@@ -1,0 +1,86 @@
+body {
+    margin:0;
+    font-family:sans-serif;
+    background: linear-gradient(#fff7f5,#ffeef2);
+    overflow:hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.page { display:none; height:100vh; }
+.page.active { display:block; }
+
+#intro {
+    position:fixed;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:#fff7f5;
+}
+
+#tejas {
+    position:absolute;
+    width:90px;
+    transform:translate(-50%,-50%);
+}
+
+.controls {
+    position:fixed;
+    bottom:80px;
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+}
+
+.nav {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    display:flex;
+    background:white;
+}
+
+.nav button {
+    flex:1;
+    padding:10px;
+}
+
+button {
+    border:none;
+    border-radius:20px;
+    padding:10px;
+    background:#ff7aa2;
+    color:white;
+}
+
+button:active {
+    transform:scale(0.9);
+}
+
+#msg {
+    position:fixed;
+    bottom:140px;
+    width:100%;
+    text-align:center;
+}
+
+.heart {
+    position:absolute;
+    animation:float 1s forwards;
+}
+
+@keyframes float {
+    to {transform:translateY(-100px);opacity:0;}
+}
+
+#gameArea {
+    margin-top:20px;
+}
+
+.card {
+    display:inline-block;
+    margin:10px;
+    font-size:30px;
+}
