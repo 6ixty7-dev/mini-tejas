@@ -1,18 +1,8 @@
 body {
     margin:0;
-    font-family:sans-serif;
-    background: linear-gradient(#fff7f5,#ffeef2);
+    background:linear-gradient(#fff7f5,#ffeef2);
     overflow:hidden;
-    -webkit-tap-highlight-color: transparent;
-}
-
-/* PAGES */
-.page {
-    display:none;
-    height:100vh;
-}
-.page.active {
-    display:block;
+    font-family:sans-serif;
 }
 
 /* INTRO */
@@ -20,19 +10,129 @@ body {
     position:fixed;
     width:100%;
     height:100%;
+    background:#fff7f5;
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    background:#fff7f5;
 }
 
 /* CHARACTER */
 #tejas {
     position:absolute;
-    width:95px;
+    width:120px;
+    height:160px;
     transform:translate(-50%,-50%);
-    transition:transform 0.15s ease;
+}
+
+/* BODY */
+.body {
+    width:80px;
+    height:60px;
+    background:#ffd7b5;
+    border-radius:20px;
+    position:absolute;
+    top:70px;
+    left:20px;
+}
+
+/* FACE */
+.face {
+    width:120px;
+    height:120px;
+    background:#ffd7b5;
+    border-radius:50%;
+    position:absolute;
+    top:0;
+}
+
+/* EYES */
+.eye {
+    width:14px;
+    height:14px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:40px;
+    transition:0.1s;
+}
+
+.left { left:30px; }
+.right { right:30px; }
+
+/* BLUSH */
+.blush {
+    position:absolute;
+    width:100%;
+    top:65px;
+    display:flex;
+    justify-content:space-around;
+}
+
+.blush::before,
+.blush::after {
+    content:"";
+    width:12px;
+    height:6px;
+    background:pink;
+    border-radius:50%;
+}
+
+/* MOUTH */
+.mouth {
+    width:24px;
+    height:10px;
+    border-bottom:3px solid black;
+    border-radius:0 0 20px 20px;
+    position:absolute;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* LEGS */
+.leg {
+    width:20px;
+    height:40px;
+    background:#333;
+    position:absolute;
+    bottom:0;
+    border-radius:10px;
+}
+
+.left-leg { left:30px; }
+.right-leg { right:30px; }
+
+/* WALK ANIMATION */
+.walk .left-leg {
+    animation:walkL 0.4s infinite;
+}
+.walk .right-leg {
+    animation:walkR 0.4s infinite;
+}
+
+@keyframes walkL {
+    0%{transform:rotate(20deg)}
+    50%{transform:rotate(-20deg)}
+    100%{transform:rotate(20deg)}
+}
+
+@keyframes walkR {
+    0%{transform:rotate(-20deg)}
+    50%{transform:rotate(20deg)}
+    100%{transform:rotate(-20deg)}
+}
+
+/* HAT */
+.hat {
+    position:absolute;
+    top:-20px;
+    left:15px;
+    width:90px;
+    height:35px;
+    background:yellow;
+    border-radius:50%;
+    display:none;
 }
 
 /* MESSAGE */
@@ -41,69 +141,37 @@ body {
     bottom:140px;
     width:100%;
     text-align:center;
-    font-size:18px;
 }
 
 /* BUTTONS */
 .controls {
     position:fixed;
-    bottom:80px;
+    bottom:40px;
     width:100%;
     display:flex;
     justify-content:space-around;
 }
 
 button {
+    padding:10px;
     border:none;
     border-radius:20px;
-    padding:12px;
     background:#ff7aa2;
     color:white;
-    font-size:16px;
-    transition:0.1s;
 }
 
-button:active {
-    transform:scale(0.9);
+/* BREATHING */
+@keyframes breathe {
+    50% { transform:scale(1.03); }
 }
 
-/* NAV */
-.nav {
-    position:fixed;
-    bottom:0;
-    width:100%;
-    display:flex;
-    background:white;
-}
-.nav button {
-    flex:1;
+.idle {
+    animation:breathe 2s infinite;
 }
 
-/* HEARTS */
-.heart {
-    position:absolute;
-    font-size:20px;
-    animation:float 1s forwards;
-}
-
-@keyframes float {
-    to {
-        transform:translateY(-120px);
-        opacity:0;
-    }
-}
-
-/* GAME */
-#gameArea {
-    margin-top:20px;
-    text-align:center;
-}
-
-.card {
-    display:inline-block;
-    margin:10px;
-    font-size:30px;
-    background:white;
-    padding:10px;
-    border-radius:10px;
+/* SHAKE */
+@keyframes shake {
+    0%{transform:translateX(0)}
+    50%{transform:translateX(10px)}
+    100%{transform:translateX(-10px)}
 }
