@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Tejas 🧸</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="intro">
+    <h2>💌 You got something...</h2>
+    <button onclick="enterApp()">Open</button>
+</div>
+
+<div id="home" class="page active">
+    <img id="tejas" src="assets/idle.png">
+    <div id="msg"></div>
+
+    <div class="controls">
+        <button onclick="hug()">🤗</button>
+        <button onclick="kiss()">😘</button>
+        <button onclick="tickle()">🪶</button>
+        <button onclick="slap()">😤</button>
+    </div>
+</div>
+
+<div id="letters" class="page">
+    <h2>💌 For You</h2>
+    <p id="letterText"></p>
+    <button onclick="nextLetter()">Next 💌</button>
+</div>
+
+<div id="games" class="page">
+    <button onclick="startMemory()">🧠 Memory</button>
+    <button onclick="startQuiz()">❓ Quiz</button>
+    <div id="gameArea"></div>
+</div>
+
+<div id="us" class="page">
+    <h2>💞 Us</h2>
+    <p>Days together: <span id="days"></span></p>
+    <p>I choose you. Always.</p>
+</div>
+
+<div class="nav">
+    <button onclick="showPage('home')">🏠</button>
+    <button onclick="showPage('letters')">💌</button>
+    <button onclick="showPage('games')">🎮</button>
+    <button onclick="showPage('us')">💞</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
