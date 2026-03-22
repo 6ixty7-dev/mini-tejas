@@ -6,9 +6,16 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
-.page { display:none; height:100vh; }
-.page.active { display:block; }
+/* PAGES */
+.page {
+    display:none;
+    height:100vh;
+}
+.page.active {
+    display:block;
+}
 
+/* INTRO */
 #intro {
     position:fixed;
     width:100%;
@@ -20,12 +27,24 @@ body {
     background:#fff7f5;
 }
 
+/* CHARACTER */
 #tejas {
     position:absolute;
-    width:90px;
+    width:95px;
     transform:translate(-50%,-50%);
+    transition:transform 0.15s ease;
 }
 
+/* MESSAGE */
+#msg {
+    position:fixed;
+    bottom:140px;
+    width:100%;
+    text-align:center;
+    font-size:18px;
+}
+
+/* BUTTONS */
 .controls {
     position:fixed;
     bottom:80px;
@@ -34,6 +53,21 @@ body {
     justify-content:space-around;
 }
 
+button {
+    border:none;
+    border-radius:20px;
+    padding:12px;
+    background:#ff7aa2;
+    color:white;
+    font-size:16px;
+    transition:0.1s;
+}
+
+button:active {
+    transform:scale(0.9);
+}
+
+/* NAV */
 .nav {
     position:fixed;
     bottom:0;
@@ -41,46 +75,35 @@ body {
     display:flex;
     background:white;
 }
-
 .nav button {
     flex:1;
-    padding:10px;
 }
 
-button {
-    border:none;
-    border-radius:20px;
-    padding:10px;
-    background:#ff7aa2;
-    color:white;
-}
-
-button:active {
-    transform:scale(0.9);
-}
-
-#msg {
-    position:fixed;
-    bottom:140px;
-    width:100%;
-    text-align:center;
-}
-
+/* HEARTS */
 .heart {
     position:absolute;
+    font-size:20px;
     animation:float 1s forwards;
 }
 
 @keyframes float {
-    to {transform:translateY(-100px);opacity:0;}
+    to {
+        transform:translateY(-120px);
+        opacity:0;
+    }
 }
 
+/* GAME */
 #gameArea {
     margin-top:20px;
+    text-align:center;
 }
 
 .card {
     display:inline-block;
     margin:10px;
     font-size:30px;
+    background:white;
+    padding:10px;
+    border-radius:10px;
 }
