@@ -8,11 +8,13 @@
 
 <body>
 
+<!-- INTRO -->
 <div id="intro">
     <h2>💌 You got something...</h2>
     <button onclick="enterApp()">Open</button>
 </div>
 
+<!-- HOME -->
 <div id="home" class="page active">
     <img id="tejas" src="assets/idle.png">
     <div id="msg"></div>
@@ -25,16 +27,38 @@
     </div>
 </div>
 
+<!-- LETTERS -->
 <div id="letters" class="page">
     <h2>💌 For You</h2>
     <p id="letterText"></p>
     <button onclick="nextLetter()">Next 💌</button>
 </div>
 
+<!-- GAMES -->
 <div id="games" class="page">
     <button onclick="startMemory()">🧠 Memory</button>
     <button onclick="startQuiz()">❓ Quiz</button>
     <div id="gameArea"></div>
+</div>
+
+<!-- US -->
+<div id="us" class="page">
+    <h2>💞 Us</h2>
+    <p>Days together: <span id="days"></span></p>
+    <p>I choose you. Always.</p>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+    <button onclick="showPage('home')">🏠</button>
+    <button onclick="showPage('letters')">💌</button>
+    <button onclick="showPage('games')">🎮</button>
+    <button onclick="showPage('us')">💞</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>    <div id="gameArea"></div>
 </div>
 
 <div id="us" class="page">
